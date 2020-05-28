@@ -25,7 +25,7 @@ public class Vehicle {
     return availability;
   }
 
-  public int getId() {
+  public Integer getId() {
     return id;
   }
 
@@ -34,7 +34,7 @@ public class Vehicle {
   }
 
   @GeneratedValue
-  private int id;
+  private Integer id;
 
 
 

@@ -33,19 +33,19 @@ public class VehicleDaoTest {
 
     @Test
     public  void CreateVehicleTest(){
-        /*Vehicle v = new Vehicle(id);
+        Vehicle v = new Vehicle();
         v.setLicenseplate("1111111");
         v.setAvailability(true);
         em.persist(v);
 
         try {
-            dao.createVehicle("1111111");
+            dao.createVehicle("1111111","null");
         } catch (Exception e) {
             e.printStackTrace();
         }
         Vehicle res = dao.find("1111111");
         Assert.assertEquals(v.getLicenseplate(), res.getLicenseplate());
-        Assert.assertEquals(v.getAvailability(), res.getAvailability());*/
+        Assert.assertEquals(v.getAvailability(), res.getAvailability());
     }
     @Test
     public void assignVehicleTest() throws Exception {
@@ -55,38 +55,40 @@ public class VehicleDaoTest {
         user.setUsername("frajer");
         em.persist(user);
 
-        /*Vehicle v = new Vehicle(id);
+        Vehicle v = new Vehicle();
         v.setLicenseplate("1111111");
         v.setAvailability(true);
 
 
-        dao.createVehicle("1111111");
+        dao.createVehicle("1111111","null");
         dao.assignVehicle(v.getLicenseplate(),user.getUsername());
-        Assert.assertEquals(user.getVehicleid(),v.getLicenseplate());*/
+        Assert.assertEquals(user.getVehicleid(), v.getId());
     }
 
+    @Test
     public void createAndDestroyVehicleTest() throws Exception {
-        /*Vehicle v = new Vehicle(id);
+        Vehicle v = new Vehicle();
         v.setLicenseplate("1111111");
         v.setAvailability(true);
 
-        dao.createVehicle("1111111");
+        dao.createVehicle("1111111","null");
         Vehicle res = dao.find("1111111");
         Assert.assertNotNull(res);
         Assert.assertEquals(res.getLicenseplate(),v.getLicenseplate());
         dao.destroyVehicle("1111111");
         res = dao.find("1111111");
-        Assert.assertEquals(null,res);*/
+        Assert.assertEquals(null,res);
     }
 
+    @Test
     public void findTest(){
-      /*  Vehicle v = new Vehicle(id);
+        Vehicle v = new Vehicle();
         v.setLicenseplate("1111111");
         v.setAvailability(true);
 
         em.persist(v);
         Vehicle res =dao.find(v.getLicenseplate());
         Assert.assertNotNull(res);
-        Assert.assertEquals(res.getLicenseplate(),v.getLicenseplate());*/
+        Assert.assertEquals(res.getLicenseplate(),v.getLicenseplate());
     }
 }
